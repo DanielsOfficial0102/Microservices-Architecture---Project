@@ -40,13 +40,33 @@ A solução foi projetada utilizando **microsserviços**, garantindo escalabilid
 
 ## 🚀 Tecnologias Utilizadas  
 
-- **API Gateway** para gerenciamento de tráfego  
-- **BFF (Backend for Frontend)** para otimização de comunicação  
-- **Load Balancer** para distribuir requisições  
+- **API Gateway** 
+
+Escolhemos Python para desenvolver a API Gateway pela sua simplicidade, flexibilidade e forte suporte a integrações. 
+- **BFF (Backend for Frontend)** para otimização de comunicação
+
+O BFF irá simplificar a comunicação entre o front-end e os serviços internos, atuando como uma camada intermediária que adapta os dados para cada tipo de cliente (web, mobile, IoT), reduzindo a complexidade e melhorando a performance.
+
+- **Load Balancer** para distribuir requisições
+
+Load Balancer é essencial em uma arquitetura de microsserviços porque melhora a distribuição de tráfego, garantindo alta disponibilidade, escalabilidade e desempenho
 - **Redis Cache** para melhorar a performance do catálogo de produtos  
-- **RabbitMQ/Kafka** para comunicação assíncrona entre microsserviços  
-- **PostgreSQL & MongoDB** para armazenamento de dados  
-- **Prometheus, Grafana, ELK** para observabilidade e logs  
+
+O Redis será essencial para melhorar performance, escalabilidade e resiliência, armazenando dados em memória, permitindo cache eficiente para reduzir a carga em bancos de dados e acelerar respostas.
+
+- **RabbitMQ/Kafka** para comunicação assíncrona entre microsserviços
+
+Optamos pelo RabbitMQ por sua leveza, facilidade de configuração e suporte a filas de mensagens persistentes, sendo ideal para casos que exigem confiabilidade na entrega, como processamento de pedidos e notificações.
+
+Já o Kafka foi escolhido para cenários que exigem streaming de eventos em tempo real, como atualizações de estoque e monitoramento de comportamento do usuário
+
+- **PostgreSQL & MongoDB** para armazenamento de dados
+
+Optamos por escolher PostgreSQL para as operações transacionais pois é um banco de dados relacional e robusto. Possui um SQL fácil e poderoso. O MongoDB foi escolhido pois possui otimo desempenho em lidar com grandes volumes de dados. Será utilizado para os dados semiestruturados, tais como: logs de navegação e carrinho de compras.
+
+- **Prometheus, Grafana, ELK** para observabilidade e logs
+
+Escolhemos o conjunto Prometheus, Grafana e ELK  pois permite analisar logs para identificar erros e padrões, exibição em dashboard da performance da aplicação, alertas sobre desempenho, ajuda a identificar anomalias e funcionam perfeitamente em grandes volumes de logs como um e-commerce.
 
 ## 👥 Grupo
 ### Bruno Elly
